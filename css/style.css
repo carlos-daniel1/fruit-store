@@ -1,0 +1,155 @@
+body{
+    background-color: #343a40;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    height: 45px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.header-link{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+}
+
+.header-link:hover{
+    color: rgb(126, 48, 209);
+}
+
+#container-frutas img{
+    border-radius: 10px;
+    width: 200px;
+    height: 150px;
+}
+
+#container-frutas{
+    margin: 80px 0;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+    display: flex;
+}
+
+.frutas{
+    padding: 20px;
+    border-radius: 15px;
+    transition: .4s;
+    cursor: default;
+}
+
+.frutas:hover{
+   background-color: #272829;
+
+}
+
+
+.frutas button{
+    font-size: 20px;
+}
+
+.preco{
+    font-weight: 800;
+}
+
+
+.add-fruta{
+    padding: 5px;
+    border-radius: 15px;
+    color: white;
+    background-color: #25ca30;
+    font-size: 18px;
+    margin: 10px auto;
+    width: 200px;
+    text-decoration: none;
+    display: block;
+}
+
+.add-fruta:hover{
+    background-color: #23842a;
+    cursor: pointer;
+}
+
+
+
+.container-qtd{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 20px;
+}
+
+.h1-login{
+    text-align: center;
+    cursor: pointer;
+    margin-top: 120px;
+    margin-left: 10px;
+}
+
+.h1-login:hover{
+    color: rgb(126, 48, 209);
+}
+
+form{
+    display: block;
+    cursor: default;
+    text-align: center;
+    background-color: #2728294f;
+    width: fit-content;
+    margin: auto;
+    padding: 20px 60px;
+    border-radius: 10px;
+}
+
+form input {
+    font-size: 16px;
+    height: 20px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.button{
+    margin: 30px auto;
+    display: block;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #25ca30;
+    color: white;
+    width: fit-content;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.button:hover{
+    background-color: #1f8726;
+}
+
+@media (max-width: 830px) {
+    #container-frutas{
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 380px) {
+    header{
+        padding: 20px 3%;
+    }
+
+    nav {
+        gap: 10px;
+    }
+}
