@@ -1,20 +1,32 @@
 body{
+    margin: 0;
+    padding: 0;
     background-color: #343a40;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
 }
 
 header{
+    align-items: center;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    padding: 20px 10%;
-    height: 45px;
+    padding: 10px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #51ab57eb;
 }
 
 nav {
+    align-items: center;
     display: flex;
     flex-direction: row;
     gap: 25px;
+}
+
+nav img{
+    padding-top: 6px;
 }
 
 .header-link{
@@ -30,8 +42,8 @@ nav {
 
 #container-frutas img{
     border-radius: 10px;
-    width: 200px;
-    height: 150px;
+    width: 180px;
+    height: 120px;
 }
 
 #container-frutas{
@@ -41,6 +53,7 @@ nav {
     gap: 40px;
     display: flex;
 }
+
 
 .frutas{
     padding: 20px;
@@ -71,7 +84,7 @@ nav {
     background-color: #25ca30;
     font-size: 17px;
     margin: 10px auto;
-    width: 200px;
+    width: 150px;
     text-decoration: none;
     display: block;
 }
@@ -90,10 +103,10 @@ nav {
 }
 
 .h1-login{
-    text-align: center;
     cursor: pointer;
-    margin-top: 120px;
-    margin-left: 10px;
+    width: fit-content;
+    margin: 100px auto;
+    margin-bottom: 25px;
 }
 
 .h1-login:hover{
@@ -107,7 +120,7 @@ form{
     background-color: #2728294f;
     width: fit-content;
     margin: auto;
-    padding: 20px 60px;
+    padding: 10px 60px;
     border-radius: 10px;
 }
 
@@ -116,6 +129,11 @@ form input {
     height: 20px;
     width: 150px;
     border-radius: 5px;
+}
+
+form h2{
+    margin-block-end: 0.40em;
+    margin-block-start: 0.90em;
 }
 
 .button{
@@ -147,7 +165,7 @@ form input {
     .frutas:hover{
         background-color: #343a40;
      
-     }
+    }
 }
 
 
