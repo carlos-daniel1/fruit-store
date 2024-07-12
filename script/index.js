@@ -58,6 +58,10 @@ let quantidadeProdutos = document.getElementsByClassName('quantidade')
 
 let addFruta = document.getElementsByClassName('add-fruta')
 
+let numberCart = document.getElementById('number-cart')
+
+let contador = 0
+
 for (let i = 0; i < itens.length; i++) {
     adicionar[i].addEventListener('click', () => {
         itens[i].quantidade++
@@ -73,11 +77,11 @@ for (let i = 0; i < itens.length; i++) {
 
     addFruta[i].addEventListener('click', () => {
         if(itens[i].quantidade > 0) {
+            contador++;
+            numberCart.innerHTML = contador;
             alert(`Você adicionou: \n${itens[i].quantidade} ${itens[i].nome}`);
         } else {
             alert(`Adicione pelo menos uma unidade`)
         }
     })
-
 }
-

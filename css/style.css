@@ -18,6 +18,16 @@ header{
     background-color: #51ab57eb;
 }
 
+
+#number-cart{
+   position: absolute;
+   margin-left: 26px;
+   margin-bottom: 30px;
+   padding: 0 4px;
+   background-color: rgb(126, 48, 209);
+   border-radius: 100%;
+}
+
 nav {
     align-items: center;
     display: flex;
