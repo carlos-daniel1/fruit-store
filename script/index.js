@@ -1,32 +1,6 @@
+import { itens } from './produtos.js';
 
-const itens = [
-    {
-        id: 1,
-        nome: 'Abacate',
-        preco: 2.5,
-        img: 'img/abacate.jpg',
-        quantidade: 0
-    },
-
-    {
-        id: 2,
-        nome: 'Uva',
-        preco: 3,
-        img: 'img/uva.webp',
-        quantidade: 0
-    },
-    
-    {
-        id: 3,
-        nome: 'Banana',
-        preco: 1,
-        img: 'img/banana.jpg',
-        quantidade: 0
-    }
-
-]
-
-inicializarLoja = () => {
+const inicializarLoja = () => {
     var containerProdutos = document.getElementById('container-frutas')
     itens.forEach((item) => {
         const divProduto = document.createElement('div');
@@ -36,12 +10,7 @@ inicializarLoja = () => {
         divProduto.innerHTML = `
             <img src="${item.img}" alt="${item.nome}">
             <p>${item.nome}</p>
-            <p class="preco">R$${item.preco}</p>
-            <div class="container-qtd">
-                <button class="subtrair">-</button>
-                <p class="quantidade">${item.quantidade}</p>
-                <button class="adicionar">+</button>
-            </div>
+            <p class="preco">R$${item.preco} ${item.desc}</p>
             <a class="add-fruta" key="${item.id}">Adicionar ao carrinho</a>
         `;
         containerProdutos.appendChild(divProduto);
@@ -50,12 +19,6 @@ inicializarLoja = () => {
 
 inicializarLoja();
 
-let adicionar = document.getElementsByClassName('adicionar')
-
-let subtrair = document.getElementsByClassName('subtrair')
-
-let quantidadeProdutos = document.getElementsByClassName('quantidade')
-
 let addFruta = document.getElementsByClassName('add-fruta')
 
 let numberCart = document.getElementById('number-cart')
@@ -63,25 +26,20 @@ let numberCart = document.getElementById('number-cart')
 let contador = 0
 
 for (let i = 0; i < itens.length; i++) {
-    adicionar[i].addEventListener('click', () => {
-        itens[i].quantidade++
-        quantidadeProdutos[i].innerHTML = itens[i].quantidade;
-    })
-
-    subtrair[i].addEventListener('click', () => {
-        if(itens[i].quantidade > 0) {
-            itens[i].quantidade--
-            quantidadeProdutos[i].innerHTML = itens[i].quantidade;
-        }
-    })
 
     addFruta[i].addEventListener('click', () => {
-        if(itens[i].quantidade > 0) {
+        let escolherQtd = window.prompt(`Quanto(s) ${itens[i].desc} de ${itens[i].nome} você deseja?`)
+        let valor = itens[i].preco
+        
+        if(escolherQtd > 0) {
+            itens[i].quantidade = escolherQtd
+            alert(`Você adicionou: \n${itens[i].quantidade} ${itens[i].desc} de ${itens[i].nome} \n\nValor: R$${valor*escolherQtd}`);
             contador++;
             numberCart.innerHTML = contador;
-            alert(`Você adicionou: \n${itens[i].quantidade} ${itens[i].nome}`);
+       
         } else {
-            alert(`Adicione pelo menos uma unidade`)
+            alert("Quantidade inválida")
         }
+
     })
 }
